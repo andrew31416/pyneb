@@ -50,13 +50,15 @@ RUN
 
 2. Initialise the first band by running pyneb in the working directory with appropriate arguments. See:
    > pyneb.py -h
+   
    for details.
    
-3. Run CASTEP on the jth band, <calc-name>_j-i, for i=[1,<N>] for <N> images per band.
+3. Run CASTEP on the jth band, calc-name_j-i, for i=[1,<N>] for <N> images per band.
 
 4. Once all single points calculations for the most recent band (j) are complete, run
    > pyneb.py
-   in the working directory to generate the next band, <calc-name>_{j+1}-i, for i=[1,<N>].
+   
+   in the working directory to generate the next band, calc-name_{j+1}-i, for i=[1,<N>].
 
 5. Repeat steps 3. and 4. until you are satisfied that the NEB hamiltonian has been minimised.
 
