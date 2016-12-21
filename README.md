@@ -1,20 +1,23 @@
-An interface to ase's nudged elastic band (NEB) hamiltonian and associated minimisers. pyneb.py is intended to 
-generate each image of each NEB iteration successively, after CASTEP DFT calculations have been run on the 
-previous band in the working directory. Intended for large systems where continuous NEB calculations are not 
-possible or prefered on HPC clusters, allowing the user to submit individual image calculations to the cluster at 
-a time.
+A wrapper for ASE's nudged elastict band (NEB) methods, providing I/O parsing for CASTEP. Intended for large configurations, pyneb allows the user to run (independant) single point calculations on individual images with CASTEP. Once all single point calculations for a given band are complete, running pyneb in your working directory will generate .cell and .param files for the next band.
+
+Initial seed (.cell and .param) files are assumed to be the two metastable (end) points of the band - this is not checked for and if the configurations have not been geometry optimised for the seed calculation parameters, spurious minimum energy pathways may result!
 
 ------------
 DEPENDENCIES
 ------------
 
 1. Atomic Simulation Environment (ASE)
+> conda install -c jochym ase=3.11.0 
 
 2. Docopt
+> conda install -c asmeurer docopt=0.6.2 
 
 -------
 INSTALL
 -------
+
+To make use of ASE's NEB methods, some modifications are necessary to atoms.py and optimize.py. Please read the INSTALL guide carefully!
+
 
 1. Move the library files;
     
@@ -34,26 +37,27 @@ INSTALL
 
 5. In the local ASE root, mv optimize.py to optimize-original.py for safe keeping
 
-6. Now mv atoms.py from this (pyneb) distribution, to the local ASE root
+6. Now soft link or move atoms.py from this (pyneb) distribution, to the local ASE root
 
-7. Now mv optimize.py from this (pyneb) distribution, to the local ASE root
+7. Now soft link or move optimize.py from this (pyneb) distribution, to the local ASE root
 
 ---
 RUN
 ---
 
 1. Construct two seed structures, the end points of your NEB and put the .cell and .param files in an empty 
-   working directory.
+   working directory. Ensure these are geometry optimised to a reasonable tolerance.
 
-2. Initialise an initial image by running pyneb in the working directory with appropriate arguments. See:
-   >>> pyneb.py -h
+2. Initialise the first band by running pyneb in the working directory with appropriate arguments. See:
+   > pyneb.py -h
+   for details.
+   
+3. Run CASTEP on the jth band, <calc-name>_j-i, for i=[1,<N>] for <N> images per band.
 
-3. Run CASTEP on the first band, <calc-name>_1-i, for i=[1,<N>] for <N> images per band.
+4. Once all single points calculations for the most recent band (j) are complete, run
+   > pyneb.py
+   in the working directory to generate the next band, <calc-name>_{j+1}-i, for i=[1,<N>].
 
-4. Run pyneb,
-   >>> pyneb.py
-   in the working directory to generate the next band, <calc-name>_2-i, for i=[1,<N>].
-
-5. Repeat steps 3. and 4. ...
+5. Repeat steps 3. and 4. until you are satisfied that the NEB hamiltonian has been minimised.
 
 
