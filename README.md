@@ -62,4 +62,12 @@ RUN
 
 5. Repeat steps 3. and 4. until you are satisfied that the NEB hamiltonian has been minimised.
 
+-------
+EXAMPLE
+-------
+
+Minimum energy pathway between pristine and 5-7 defective graphene
+
+![place holder 1](andrew031191.github.com/pyneb/examples/graphene_5-7/placeholder.png)
+
 
