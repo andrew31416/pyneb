@@ -68,6 +68,10 @@ EXAMPLE
 
 Minimum energy pathway between pristine and 5-7 defective graphene
 
-![place holder 1](/examples/graphene_5-7/graphene-pristine.pdf) ![place holder 1](/examples/graphene_5-7/graphene-5_7.pdf)
+![pristine graphene](/examples/graphene_5-7/graphene-pristine.png) ![5-7 defective graphene](/examples/graphene_5-7/graphene-5_7.png)
+
+
+![Minimisation of the NEB hamiltonian and minimum energy barrier between metastable configurations](/examples/graphene_5-7/graphene_NEB.png)
+
 
 
