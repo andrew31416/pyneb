@@ -68,6 +68,6 @@ EXAMPLE
 
 Minimum energy pathway between pristine and 5-7 defective graphene
 
-![place holder 1](/examples/graphene_5-7/placeholder.png)
+![place holder 1](/examples/graphene_5-7/graphene-pristine.pdf) ![place holder 1](/examples/graphene_5-7/graphene-5_7.pdf)
 
 
