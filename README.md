@@ -68,10 +68,19 @@ EXAMPLE
 
 Minimum energy pathway between pristine and 5-7 defective graphene
 
-![pristine graphene](/examples/graphene_5-7/graphene-pristine.png) ![5-7 defective graphene](/examples/graphene_5-7/graphene-5_7.png)
+Seed structure 1 - pristine graphene
+_________________________________________
 
+![pristine graphene](/examples/graphene_5-7/graphene-pristine.png) 
+
+Seed structure 2 - 5-7 defective graphene
+_________________________________________
+
+![5-7 defective graphene](/examples/graphene_5-7/graphene-5_7.png)
+
+Minimisation of the NEB hamiltonian
+___________________________________
 
 ![Minimisation of the NEB hamiltonian and minimum energy barrier between metastable configurations](/examples/graphene_5-7/graphene_NEB.png)
 
-
-
+This figure shows the NEB hamiltonian becoming minimised over 7 bands. Here, each band contains 7 images where the middle 5 represent the minimum energy pathway between the 5-7 defective and pristince states of graphene.
